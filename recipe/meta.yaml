@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -25,7 +25,7 @@ requirements:
     - importlib-resources  # Normally only needed for py<39, but we're going noarch here!
     - importlib-metadata  # Normally only needed for py<38, but we're going noarch here!
     - mne-base >=1.0
-    - numpy >=1.16.0
+    - numpy >=1.21
     - scipy >=1.2.0
     - pytorch
     - pooch
