@@ -24,7 +24,7 @@ requirements:
     - python >=3.7
     - importlib-resources  # Normally only needed for py<39, but we're going noarch here!
     - importlib-metadata  # Normally only needed for py<38, but we're going noarch here!
-    - mne-base >=1.0
+    - mne-base >=1.1
     - numpy >=1.21
     - scipy >=1.2.0
     - pytorch
