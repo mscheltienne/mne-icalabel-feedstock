@@ -16,14 +16,13 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
     - pip
     - setuptools >=46.4.0
     - wheel
   run:
-    - python >=3.7
+    - python >=3.8
     - importlib-resources  # Normally only needed for py<39, but we're going noarch here!
-    - importlib-metadata  # Normally only needed for py<38, but we're going noarch here!
     - mne-base >=1.1
     - numpy >=1.21
     - scipy >=1.2.0
