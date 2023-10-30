@@ -1,5 +1,5 @@
 {% set name = "mne-icalabel" %}
-{% set version = "0.4" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,34 +7,36 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fa62976d9c623df4913e74c7741904c509628dc5964540be8b16e691309f5701
+  sha256: 3cf621851e3cd02f934c2f43b40a2a562c9dbd4a46dcfad113642dfc2668e5eb
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 0
+  entry_points:
+    - mne_icalabel-sys_info = mne_icalabel.commands.sys_info:run
+    - mne_gui_ic_annotation = mne_icalabel.commands.mne_gui_ic_annotation:main
 
 requirements:
   host:
-    - python >=3.7
     - pip
-    - setuptools >=46.4.0
-    - wheel
+    - python >=3.9
+    - setuptools >=64.0.0
   run:
-    - python >=3.7
-    - importlib-resources  # Normally only needed for py<39, but we're going noarch here!
-    - importlib-metadata  # Normally only needed for py<38, but we're going noarch here!
-    - mne-base >=1.1
-    - numpy >=1.21
-    - scipy >=1.2.0
-    - pytorch
-    - pooch
     - joblib  # ICA
-    - scikit-learn  # ICA
+    - matplotlib-base  # GUI
+    - mne-base >=1.2
+    - mne-qt-browser >=0.6.0 # GUI
+    - numpy >=1.21
+    - onnxruntime
+    - packaging
+    - pooch
+    - psutil
+    - python >=3.9
     - python-picard  # ICA
     - qtpy  # GUI
-    - mne-qt-browser  # GUI
-    - matplotlib  # GUI
+    - scikit-learn  # ICA
+    - scipy >=1.4.0
 
 test:
   imports:
@@ -43,6 +45,7 @@ test:
     - pip
   commands:
     - pip check
+    - mne_icalabel-sys_info
 
 about:
   home: https://mne.tools/mne-icalabel/stable/

@@ -1,11 +1,11 @@
-About mne-icalabel
-==================
+About mne-icalabel-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mne-icalabel-feedstock/blob/main/LICENSE.txt)
 
 Home: https://mne.tools/mne-icalabel/stable/
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mne-icalabel-feedstock/blob/main/LICENSE.txt)
 
 Summary: MNE-ICALabel is a Python package for labeling independent components that stem from an Independent Component Analysis (ICA).
 
